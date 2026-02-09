@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>StayRussia.com — Official Travel Inspiration Portal</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <style>
+    * { margin:0; padding:0; box-sizing:border-box; }
+    body { font-family:'Inter', sans-serif; color:#1a1a1a; background:#fff; }
+    a { text-decoration:none; color:inherit; }
+
+    header {
+      position:fixed;
+      top:0; left:0; right:0;
+      background:rgba(255,255,255,0.92);
+      backdrop-filter:blur(8px);
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      padding:16px 40px;
+      z-index:1000;
+      border-bottom:1px solid #eee;
+    }
+
+    .logo { font-weight:700; font-size:22px; letter-spacing:0.5px; }
+
+    nav a { margin:0 16px; font-size:14px; color:#333; }
+
+    .contact-top {
+      font-size:13px;
+      text-align:right;
+    }
+
+    .hero {
+      height:760px;
+      width:100%;
+      background:url('../hero-1920x760.jpg') center/cover no-repeat;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      position:relative;
+      margin-top:70px;
+    }
+
+    .hero::after {
+      content:'';
+      position:absolute;
+      inset:0;
+      background:rgba(0,0,0,0.35);
+    }
+
+    .hero-content {
+      position:relative;
+      color:#fff;
+      text-align:center;
+      max-width:900px;
+      padding:20px;
+    }
+
+    .hero h1 {
+      font-size:56px;
+      font-weight:700;
+      margin-bottom:20px;
+    }
+
+    .hero p { font-size:20px; margin-bottom:30px; }
+
+    .btn {
+      background:#e11d48;
+      color:#fff;
+      padding:14px 26px;
+      border-radius:30px;
+      font-weight:600;
+      display:inline-block;
+    }
+
+    section { padding:80px 60px; }
+
+    .section-title {
+      font-size:34px;
+      margin-bottom:40px;
+      font-weight:700;
+    }
+
+    .grid {
+      display:grid;
+      grid-template-columns:repeat(auto-fit, minmax(260px,1fr));
+      gap:28px;
+    }
+
+    .card {
+      background:#fff;
+      border-radius:16px;
+      overflow:hidden;
+      box-shadow:0 10px 25px rgba(0,0,0,0.08);
+      transition:transform .25s ease;
+    }
+
+    .card:hover { transform:translateY(-6px); }
+
+    .card img { width:100%; height:180px; object-fit:cover; }
+
+    .card-content { padding:20px; }
+
+    .card h3 { margin-bottom:8px; }
+
+    .cta {
+      background:#111827;
+      color:#fff;
+      text-align:center;
+      padding:100px 20px;
+    }
+
+    footer {
+      background:#0f172a;
+      color:#e5e7eb;
+      padding:60px;
+    }
+
+    .footer-grid {
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+      gap:30px;
+    }
+
+    .footer h4 { margin-bottom:14px; }
+
+    .footer-bottom {
+      margin-top:40px;
+      font-size:13px;
+      border-top:1px solid rgba(255,255,255,0.2);
+      padding-top:20px;
+      text-align:center;
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <div class="logo">StayRussia.com</div>
+  <nav>
+    <a href="#">Places to go</a>
+    <a href="#">Things to do</a>
+    <a href="#">Trips</a>
+    <a href="#">Travel tips</a>
+  </nav>
+  <div class="contact-top">
+    <div>+7 812 309 5760</div>
+    <div>@StayRussia</div>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="hero-content">
+    <h1>Discover Russia</h1>
+    <p>Plan unforgettable journeys across Moscow, Saint Petersburg, Siberia, and beyond.</p>
+    <a class="btn" href="#">Start your trip</a>
+  </div>
+</section>
+
+<section>
+  <h2 class="section-title">Popular Destinations</h2>
+  <div class="grid">
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1513326738677-b964603b136d?q=80&w=1974&auto=format&fit=crop"/>
+      <div class="card-content">
+        <h3>Moscow</h3>
+        <p>The capital city with iconic landmarks and modern experiences.</p>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1544735716-392fe2489ffa?q=80&w=1974&auto=format&fit=crop"/>
+      <div class="card-content">
+        <h3>Saint Petersburg</h3>
+        <p>The cultural heart of Russia and home to world‑class architecture.</p>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?q=80&w=1974&auto=format&fit=crop"/>
+      <div class="card-content">
+        <h3>Lake Baikal</h3>
+        <p>Explore pristine nature and the world’s deepest freshwater lake.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2 class="section-title">Trips & Itineraries</h2>
+  <div class="grid">
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1543340713-8f7d6b3c0c9a?q=80&w=1974&auto=format&fit=crop"/>
+      <div class="card-content">
+        <h3>Moscow – Saint Petersburg</h3>
+        <p>Classic multi‑city experience combining history, culture, and cuisine.</p>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1519681393784-d120267933ba?q=80&w=1974&auto=format&fit=crop"/>
+      <div class="card-content">
+        <h3>Weekend Moscow</h3>
+        <p>A fast‑paced urban escape exploring the highlights of Russia’s capital.</p>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?q=80&w=1974&auto=format&fit=crop"/>
+      <div class="card-content">
+        <h3>Murmansk Adventure</h3>
+        <p>Travel beyond the Arctic Circle and witness northern landscapes.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="cta">
+  <h2>Start planning your trip to Russia today</h2>
+  <p>Our travel experts will help craft the perfect itinerary.</p>
+  <br/>
+  <a class="btn" href="#">Contact us</a>
+</section>
+
+<footer class="footer">
+  <div class="footer-grid">
+    <div>
+      <h4>StayRussia.com</h4>
+      <p>Inspiration, tours, and travel planning for unforgettable journeys across Russia.</p>
+    </div>
+
+    <div>
+      <h4>Contact</h4>
+      <p>Phone: +7 812 309 5760</p>
+      <p>Instagram: @StayRussia</p>
+    </div>
+
+    <div>
+      <h4>Explore</h4>
+      <p>Places to go</p>
+      <p>Trips & itineraries</p>
+      <p>Travel tips</p>
+    </div>
+
+    <div>
+      <h4>Company</h4>
+      <p>About us</p>
+      <p>Press</p>
+      <p>Terms & conditions</p>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    © 2003–2026 StayRussia. All rights reserved.
+  </div>
+</footer>
+
+</body>
+</html>
