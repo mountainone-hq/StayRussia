@@ -2,261 +2,505 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>StayRussia.com — Official Travel Inspiration Portal</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>StayRussia.com – Luxury Travel to Russia | Tours & Vacation Packages</title>
+  <meta name="description" content="Discover Russia with bespoke tours, private guides, and curated experiences in Moscow, St. Petersburg, Golden Ring, Trans-Siberian Railway and beyond."/>
   <style>
-    * { margin:0; padding:0; box-sizing:border-box; }
-    body { font-family:'Inter', sans-serif; color:#1a1a1a; background:#fff; }
-    a { text-decoration:none; color:inherit; }
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background: #ffffff;
+      color: #1a1a1a;
+      line-height: 1.6;
+    }
+    a {
+      color: #0a558c;
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+    .container {
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 0 30px;
+    }
 
     header {
-      position:fixed;
-      top:0; left:0; right:0;
-      background:rgba(255,255,255,0.92);
-      backdrop-filter:blur(8px);
-      display:flex;
-      justify-content:space-between;
-      align-items:center;
-      padding:16px 40px;
-      z-index:1000;
-      border-bottom:1px solid #eee;
+      position: relative;
+      height: 760px;
+      background: #000;
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
     }
-
-    .logo { font-weight:700; font-size:22px; letter-spacing:0.5px; }
-
-    nav a { margin:0 16px; font-size:14px; color:#333; }
-
-    .contact-top {
-      font-size:13px;
-      text-align:right;
+    .hero-bg {
+      position: absolute;
+      inset: 0;
+      background: url('hero-russia.jpg') center/cover no-repeat;
+      opacity: 0.75;
     }
-
-    .hero {
-      height:760px;
-      width:100%;
-      background:url('../hero-1920x760.jpg') center/cover no-repeat;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      position:relative;
-      margin-top:70px;
-    }
-
-    .hero::after {
-      content:'';
-      position:absolute;
-      inset:0;
-      background:rgba(0,0,0,0.35);
-    }
-
     .hero-content {
-      position:relative;
-      color:#fff;
-      text-align:center;
-      max-width:900px;
-      padding:20px;
+      position: relative;
+      z-index: 2;
+      max-width: 900px;
+      padding: 40px;
+    }
+    .logo {
+      font-size: 3.4rem;
+      font-weight: 700;
+      letter-spacing: -1px;
+      margin-bottom: 16px;
+    }
+    .tagline {
+      font-size: 1.45rem;
+      margin-bottom: 40px;
+      opacity: 0.95;
+    }
+    h1 {
+      font-size: 5.2rem;
+      font-weight: 700;
+      margin-bottom: 32px;
+      line-height: 1.05;
+    }
+    .explore-btn {
+      display: inline-block;
+      font-size: 1.18rem;
+      font-weight: 500;
+      color: white;
+      background: #0a558c;
+      padding: 16px 48px;
+      border-radius: 50px;
+      transition: all 0.22s;
+    }
+    .explore-btn:hover {
+      background: #08416c;
+      transform: translateY(-2px);
     }
 
-    .hero h1 {
-      font-size:56px;
-      font-weight:700;
-      margin-bottom:20px;
+    .contact-bar {
+      position: absolute;
+      bottom: 40px;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 1.15rem;
+      text-align: center;
+      background: rgba(0,0,0,0.5);
+      padding: 16px 40px;
+      border-radius: 12px;
+    }
+    .contact-bar strong {
+      color: #a8d0ff;
+    }
+    .instagram-link {
+      color: #ff85c0;
     }
 
-    .hero p { font-size:20px; margin-bottom:30px; }
-
-    .btn {
-      background:#e11d48;
-      color:#fff;
-      padding:14px 26px;
-      border-radius:30px;
-      font-weight:600;
-      display:inline-block;
+    main {
+      padding: 80px 0 120px;
+    }
+    h2 {
+      font-size: 3.2rem;
+      font-weight: 600;
+      text-align: center;
+      margin: 0 0 50px;
+    }
+    .section-intro {
+      font-size: 1.28rem;
+      text-align: center;
+      max-width: 780px;
+      margin: 0 auto 60px;
+      color: #444;
     }
 
-    section { padding:80px 60px; }
-
-    .section-title {
-      font-size:34px;
-      margin-bottom:40px;
-      font-weight:700;
+    .cards-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+      gap: 40px;
+      margin-bottom: 100px;
     }
-
-    .grid {
-      display:grid;
-      grid-template-columns:repeat(auto-fit, minmax(260px,1fr));
-      gap:28px;
-    }
-
     .card {
-      background:#fff;
-      border-radius:16px;
-      overflow:hidden;
-      box-shadow:0 10px 25px rgba(0,0,0,0.08);
-      transition:transform .25s ease;
+      background: #f9f9f9;
+      border-radius: 12px;
+      overflow: hidden;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      position: relative;
+    }
+    .card:hover {
+      transform: translateY(-12px);
+      box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+    }
+    .card:hover .options {
+      display: flex;
+    }
+    .card-img {
+      width: 100%;
+      height: 260px;
+      object-fit: cover;
+    }
+    .card-body {
+      padding: 32px 28px;
+    }
+    .card h3 {
+      font-size: 2rem;
+      margin-bottom: 12px;
+    }
+    .card p {
+      font-size: 1.12rem;
+      color: #555;
+      margin-bottom: 20px;
+    }
+    .card .meta {
+      font-size: 0.98rem;
+      color: #777;
+      margin-bottom: 24px;
+    }
+    .options {
+      display: none;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: rgba(255,255,255,0.92);
+      padding: 20px;
+      justify-content: space-around;
+      align-items: center;
+    }
+    .option-btn {
+      font-size: 1.05rem;
+      padding: 10px 24px;
+      border: 1px solid #0a558c;
+      border-radius: 30px;
+      color: #0a558c;
+      transition: all 0.2s;
+    }
+    .option-btn:hover {
+      background: #0a558c;
+      color: white;
+      text-decoration: none;
     }
 
-    .card:hover { transform:translateY(-6px); }
+    .more-link {
+      display: block;
+      text-align: center;
+      font-size: 1.22rem;
+      margin: 60px 0 120px;
+    }
 
-    .card img { width:100%; height:180px; object-fit:cover; }
+    #services {
+      background: #f8f9fa;
+      padding: 80px 0;
+    }
+    #services p {
+      font-size: 1.18rem;
+      max-width: 800px;
+      margin: 0 auto;
+      text-align: center;
+      color: #444;
+    }
 
-    .card-content { padding:20px; }
-
-    .card h3 { margin-bottom:8px; }
-
-    .cta {
-      background:#111827;
-      color:#fff;
-      text-align:center;
-      padding:100px 20px;
+    #contact {
+      padding: 100px 0 140px;
+      background: #ffffff;
+    }
+    #contact form {
+      max-width: 620px;
+      margin: 40px auto 0;
+    }
+    #contact label {
+      display: block;
+      margin-bottom: 8px;
+      font-weight: 500;
+    }
+    #contact input, #contact textarea {
+      width: 100%;
+      padding: 14px;
+      margin-bottom: 24px;
+      border: 1px solid #ddd;
+      border-radius: 6px;
+      font-size: 1.05rem;
+    }
+    #contact button {
+      background: #0a558c;
+      color: white;
+      padding: 16px 48px;
+      border: none;
+      border-radius: 50px;
+      cursor: pointer;
+      font-size: 1.15rem;
+      font-weight: 500;
+      transition: background 0.2s;
+    }
+    #contact button:hover {
+      background: #08416c;
+    }
+    .contact-details {
+      text-align: center;
+      margin-bottom: 50px;
+      font-size: 1.18rem;
+    }
+    .contact-details a {
+      color: #0a558c;
     }
 
     footer {
-      background:#0f172a;
-      color:#e5e7eb;
-      padding:60px;
+      background: #f8f9fa;
+      padding: 80px 0 60px;
+      text-align: center;
+      color: #555;
+      border-top: 1px solid #eee;
+    }
+    .footer-contact {
+      font-size: 1.15rem;
+      margin-bottom: 40px;
+    }
+    .footer-contact a {
+      color: #0a558c;
+    }
+    .footer-links a {
+      margin: 0 16px;
+      color: #444;
     }
 
-    .footer-grid {
-      display:grid;
-      grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
-      gap:30px;
+    @media (max-width: 960px) {
+      h1 { font-size: 4.2rem; }
+      .hero-content { padding: 30px; }
+      .cards-grid { gap: 32px; }
     }
-
-    .footer h4 { margin-bottom:14px; }
-
-    .footer-bottom {
-      margin-top:40px;
-      font-size:13px;
-      border-top:1px solid rgba(255,255,255,0.2);
-      padding-top:20px;
-      text-align:center;
+    @media (max-width: 680px) {
+      h1 { font-size: 3.4rem; }
+      h2 { font-size: 2.6rem; }
+      .container { padding: 0 20px; }
+      .card-img { height: 220px; }
+      .options { flex-direction: column; gap: 16px; }
     }
   </style>
 </head>
-
 <body>
 
-<header>
-  <div class="logo">StayRussia.com</div>
-  <nav>
-    <a href="#">Places to go</a>
-    <a href="#">Things to do</a>
-    <a href="#">Trips</a>
-    <a href="#">Travel tips</a>
-  </nav>
-  <div class="contact-top">
-    <div>+7 812 309 5760</div>
-    <div>@StayRussia</div>
-  </div>
-</header>
+  <header>
+    <div class="hero-bg"></div>
+    <div class="hero-content">
+      <div class="logo">StayRussia.com</div>
+      <div class="tagline">Luxury Travel to Russia — Private Tours & Bespoke Experiences</div>
+      <h1># Russia!</h1>
+      <a href="#places" class="explore-btn">Discover Russia</a>
+    </div>
 
-<section class="hero">
-  <div class="hero-content">
-    <h1>Discover Russia</h1>
-    <p>Plan unforgettable journeys across Moscow, Saint Petersburg, Siberia, and beyond.</p>
-    <a class="btn" href="#">Start your trip</a>
-  </div>
-</section>
+    <div class="contact-bar">
+      Have a question? <strong>Let's talk</strong><br>
+      <strong><a href="tel:+78123095760" style="color:#a8d0ff;">+7 812 309 5760</a></strong><br><br>
+      Instagram: <a href="https://www.instagram.com/visitrussia/" class="instagram-link" target="_blank">@visitrussia</a>
+    </div>
+  </header>
 
-<section>
-  <h2 class="section-title">Popular Destinations</h2>
-  <div class="grid">
-    <div class="card">
-      <img src="https://images.unsplash.com/photo-1513326738677-b964603b136d?q=80&w=1974&auto=format&fit=crop"/>
-      <div class="card-content">
-        <h3>Moscow</h3>
-        <p>The capital city with iconic landmarks and modern experiences.</p>
+  <main>
+
+    <section id="places">
+      <div class="container">
+        <h2>Popular Destinations</h2>
+        <p class="section-intro">Hand-curated cities and regions — where history, culture and beauty meet</p>
+
+        <div class="cards-grid">
+
+          <div class="card">
+            <img src="moscow.jpg" alt="Moscow Red Square" class="card-img">
+            <div class="card-body">
+              <h3>Moscow</h3>
+              <p>The beating heart of Russia — imperial grandeur, modern energy, world-class museums and vibrant nightlife.</p>
+              <div class="meta">Capital · Kremlin · Red Square · Bolshoi Theatre</div>
+            </div>
+            <div class="options">
+              <a href="https://discover.moscow/" target="_blank" class="option-btn">Meet Moscow</a>
+              <a href="#contact" class="option-btn">Book a Trip Here</a>
+            </div>
+          </div>
+
+          <div class="card">
+            <img src="saint-petersburg.jpg" alt="Saint Petersburg canals" class="card-img">
+            <div class="card-body">
+              <h3>Saint Petersburg</h3>
+              <p>Venice of the North — elegant palaces, romantic canals, white nights and artistic soul.</p>
+              <div class="meta">Hermitage · Peterhof · Canals · White Nights</div>
+            </div>
+            <div class="options">
+              <a href="https://touristinfo.spb.ru/en" target="_blank" class="option-btn">Meet Saint Petersburg</a>
+              <a href="#contact" class="option-btn">Book a Trip Here</a>
+            </div>
+          </div>
+
+          <div class="card">
+            <img src="golden-ring.jpg" alt="Golden Ring Suzdal" class="card-img">
+            <div class="card-body">
+              <h3>Golden Ring</h3>
+              <p>Ancient towns with golden domes, wooden architecture and the timeless spirit of old Russia.</p>
+              <div class="meta">Suzdal · Vladimir · Yaroslavl · Medieval heritage</div>
+            </div>
+            <div class="options">
+              <a href="https://en.wikivoyage.org/wiki/Golden_Ring" target="_blank" class="option-btn">Meet Golden Ring</a>
+              <a href="#contact" class="option-btn">Book a Trip Here</a>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="more-link" style="font-size: 1.25rem; margin: 70px 0 130px;">
+          <a href="#contact">Discover 40+ more cities and destinations → contact us</a>
+        </div>
+
       </div>
-    </div>
+    </section>
 
-    <div class="card">
-      <img src="https://images.unsplash.com/photo-1544735716-392fe2489ffa?q=80&w=1974&auto=format&fit=crop"/>
-      <div class="card-content">
-        <h3>Saint Petersburg</h3>
-        <p>The cultural heart of Russia and home to world‑class architecture.</p>
+    <section id="tours">
+      <div class="container">
+        <h2>Signature Journeys</h2>
+        <p class="section-intro">Most popular and carefully crafted itineraries</p>
+
+        <div class="cards-grid">
+
+          <div class="card">
+            <img src="moscow-st-petersburg.jpg" alt="Moscow and St Petersburg" class="card-img">
+            <div class="card-body">
+              <h3>Moscow + St. Petersburg</h3>
+              <p>The classic Russia experience — two greatest cities in one unforgettable journey.</p>
+              <div class="meta">8 days · 2 capitals · 9 excursions</div>
+            </div>
+            <div class="options">
+              <a href="https://www.steppestravel.com/us/holiday-ideas/moscow-and-st-petersburg-highlights" target="_blank" class="option-btn">Meet the Journey</a>
+              <a href="#contact" class="option-btn">Book a Trip Here</a>
+            </div>
+          </div>
+
+          <div class="card">
+            <img src="moscow-weekend.jpg" alt="Moscow weekend" class="card-img">
+            <div class="card-body">
+              <h3>Week-end in Moscow</h3>
+              <p>Short but intense — the very best of Moscow in just a few days.</p>
+              <div class="meta">4 days · Moscow focus</div>
+            </div>
+            <div class="options">
+              <a href="https://www.youtube.com/watch?v=AHrCRwb8ZGc" target="_blank" class="option-btn">View the City</a>
+              <a href="#contact" class="option-btn">Book a Trip Here</a>
+            </div>
+          </div>
+
+          <div class="card">
+            <img src="trans-siberian.jpg" alt="Trans-Siberian Railway" class="card-img">
+            <div class="card-body">
+              <h3>Trans-Siberian Railway</h3>
+              <p>Epic train journey across Russia — from Moscow to Vladivostok through forests, Lake Baikal and remote Siberia.</p>
+              <div class="meta">14–21 days · Iconic railway · Lake Baikal · Multiple stops</div>
+            </div>
+            <div class="options">
+              <a href="https://www.seat61.com/Trans-Siberian.htm" target="_blank" class="option-btn">Meet Trans-Siberian</a>
+              <a href="#contact" class="option-btn">Book a Trip Here</a>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="more-link" style="font-size: 1.25rem; margin: 70px 0 130px;">
+          <a href="#contact">See all 22 tour programs and custom itineraries → contact us</a>
+        </div>
       </div>
-    </div>
+    </section>
 
-    <div class="card">
-      <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?q=80&w=1974&auto=format&fit=crop"/>
-      <div class="card-content">
-        <h3>Lake Baikal</h3>
-        <p>Explore pristine nature and the world’s deepest freshwater lake.</p>
+    <section id="services">
+      <div class="container">
+        <h2>Our Services</h2>
+        <p>We help travelers discover Russia's breathtaking beauty and rich cultural heritage through personalized tours and expert guidance. Our experienced team assists in navigating the vibrant cities, ensuring you experience the authentic flavors and culinary richness that make Russian cuisine unforgettable. From historical landmarks to hidden gems, we craft journeys that immerse you in the soul of Russia.</p>
       </div>
-    </div>
-  </div>
-</section>
+    </section>
 
-<section>
-  <h2 class="section-title">Trips & Itineraries</h2>
-  <div class="grid">
-    <div class="card">
-      <img src="https://images.unsplash.com/photo-1543340713-8f7d6b3c0c9a?q=80&w=1974&auto=format&fit=crop"/>
-      <div class="card-content">
-        <h3>Moscow – Saint Petersburg</h3>
-        <p>Classic multi‑city experience combining history, culture, and cuisine.</p>
+    <section id="contact">
+      <div class="container">
+        <h2>Contact Us</h2>
+        <div class="contact-details">
+          <strong>Phone:</strong> <a href="tel:+78123095760">+7 812 309 5760</a><br>
+          <strong>Email:</strong> <a href="mailto:info@stayrussia.com">info@stayrussia.com</a><br>
+          <strong>Address:</strong> Michurinskaya St, 19, Saint Petersburg, 197046, Russia
+        </div>
+
+        <form id="contactForm">
+          <label for="name">Your Name</label>
+          <input type="text" id="name" name="name" required>
+
+          <label for="email">Your Email</label>
+          <input type="email" id="email" name="email" required>
+
+          <label for="phone">Phone (optional)</label>
+          <input type="tel" id="phone" name="phone">
+
+          <label for="message">Your Message / Inquiry</label>
+          <textarea id="message" name="message" rows="6" required placeholder="Tell us about your travel plans, dates, number of people, interests..."></textarea>
+
+          <button type="submit">Send Inquiry</button>
+        </form>
       </div>
-    </div>
+    </section>
 
-    <div class="card">
-      <img src="https://images.unsplash.com/photo-1519681393784-d120267933ba?q=80&w=1974&auto=format&fit=crop"/>
-      <div class="card-content">
-        <h3>Weekend Moscow</h3>
-        <p>A fast‑paced urban escape exploring the highlights of Russia’s capital.</p>
+  </main>
+
+  <footer>
+    <div class="container">
+      <div class="footer-contact">
+        <strong>StayRussia.com</strong><br><br>
+        <a href="tel:+78123095760">+7 812 309 5760</a><br>
+        <a href="mailto:info@stayrussia.com">info@stayrussia.com</a><br><br>
+        Michurinskaya St, 19, Saint Petersburg, 197046, Russia<br>
+        Instagram: <a href="https://www.instagram.com/visitrussia/" target="_blank">@visitrussia</a>
       </div>
-    </div>
 
-    <div class="card">
-      <img src="https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?q=80&w=1974&auto=format&fit=crop"/>
-      <div class="card-content">
-        <h3>Murmansk Adventure</h3>
-        <p>Travel beyond the Arctic Circle and witness northern landscapes.</p>
+      <div class="footer-links">
+        <a href="#">About us</a> •
+        <a href="#contact">Contact us</a> •
+        <a href="#">For press</a>
       </div>
+
+      <p style="margin-top:50px; font-size:0.98rem; color:#777;">
+        © 2026 StayRussia.com — Luxury Travel in Russia
+      </p>
     </div>
-  </div>
-</section>
+  </footer>
 
-<section class="cta">
-  <h2>Start planning your trip to Russia today</h2>
-  <p>Our travel experts will help craft the perfect itinerary.</p>
-  <br/>
-  <a class="btn" href="#">Contact us</a>
-</section>
+  <script>
+    document.getElementById('contactForm').addEventListener('submit', function(e) {
+      e.preventDefault();
 
-<footer class="footer">
-  <div class="footer-grid">
-    <div>
-      <h4>StayRussia.com</h4>
-      <p>Inspiration, tours, and travel planning for unforgettable journeys across Russia.</p>
-    </div>
+      const name    = document.getElementById('name').value.trim();
+      const email   = document.getElementById('email').value.trim();
+      const phone   = document.getElementById('phone').value.trim();
+      const message = document.getElementById('message').value.trim();
 
-    <div>
-      <h4>Contact</h4>
-      <p>Phone: +7 812 309 5760</p>
-      <p>Instagram: @StayRussia</p>
-    </div>
+      if (!name || !email || !message) {
+        alert('Please fill in all required fields.');
+        return;
+      }
 
-    <div>
-      <h4>Explore</h4>
-      <p>Places to go</p>
-      <p>Trips & itineraries</p>
-      <p>Travel tips</p>
-    </div>
+      const subject = 'NEW INQUIRY';
+      const body = 
+        `Name: ${name}\n` +
+        `Email: ${email}\n` +
+        (phone ? `Phone: ${phone}\n` : '') +
+        `\nMessage:\n${message}`;
 
-    <div>
-      <h4>Company</h4>
-      <p>About us</p>
-      <p>Press</p>
-      <p>Terms & conditions</p>
-    </div>
-  </div>
+      const mailtoLink = `mailto:info@stayrussia.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
 
-  <div class="footer-bottom">
-    © 2003–2026 StayRussia. All rights reserved.
-  </div>
-</footer>
+      window.location.href = mailtoLink;
+
+      // Optional: show feedback
+      setTimeout(() => {
+        alert('Thank you! Your inquiry has been prepared — your email client should open now.');
+        document.getElementById('contactForm').reset();
+      }, 300);
+    });
+  </script>
 
 </body>
 </html>
